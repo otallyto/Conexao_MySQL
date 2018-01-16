@@ -25,6 +25,7 @@ public class CategoriaDAO {
         con = ConnectionFactory.getConnection();
     }
     
+    //Salva no banco de dados
     public boolean save(Categoria categoria){
         String sql = "INSERT INTO categoria (descricao) VALUES (?)";
         PreparedStatement stmt = null;
@@ -43,7 +44,7 @@ public class CategoriaDAO {
     
     }
     
-    //Busca no banco de dados
+    //Lista todos os itens do banco de dados
     public List<Categoria> findAll(){
     
         String sql = "SELECT * FROM categoria";
@@ -70,6 +71,7 @@ public class CategoriaDAO {
         return categorias;
     }
     
+    //Atualiza no banco de dados
      public boolean update(Categoria categoria){
         String sql = "UPDATE categoria SET descricao = ? WHERE ID = ?";
         PreparedStatement stmt = null;
@@ -88,6 +90,7 @@ public class CategoriaDAO {
     
     }
      
+     //Deleta um iten do bando de dados
       public boolean delete(Categoria categoria){
         String sql = "DELETE FROM categoria WHERE id = ?";
         PreparedStatement stmt = null;
@@ -101,8 +104,8 @@ public class CategoriaDAO {
             return false;
         }finally{
             ConnectionFactory.closeConnection(con,stmt);
-        }
-        
-    
+        }   
     }
+      
+    
 }
