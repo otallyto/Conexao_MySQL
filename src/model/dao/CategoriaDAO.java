@@ -70,5 +70,39 @@ public class CategoriaDAO {
         return categorias;
     }
     
-    //Comentário
+     public boolean update(Categoria categoria){
+        String sql = "UPDATE categoria SET descricao = ? WHERE ID = ?";
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setString(1, categoria.getDescricao());
+            stmt.setInt(2, categoria.getId());
+            stmt.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            System.err.println("ERRO: "+ex);
+            return false;
+        }finally{
+            ConnectionFactory.closeConnection(con,stmt);
+        } 
+    
+    }
+     
+      public boolean delete(Categoria categoria){
+        String sql = "DELETE FROM categoria WHERE id = ?";
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, categoria.getId());
+            stmt.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            System.err.println("ERRO: "+ex);
+            return false;
+        }finally{
+            ConnectionFactory.closeConnection(con,stmt);
+        }
+        
+    
+    }
 }
