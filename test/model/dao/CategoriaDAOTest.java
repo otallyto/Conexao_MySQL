@@ -8,6 +8,7 @@ package model.dao;
 import model.bean.Categoria;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
 /**
  *
@@ -19,6 +20,7 @@ public class CategoriaDAOTest {
     }
 
     @Test
+    @Ignore
     public void inserir() {
         
         Categoria cat = new Categoria ("Calça Social");
@@ -31,4 +33,11 @@ public class CategoriaDAOTest {
         }
     }
     
+    @Test
+    public void listar(){
+    CategoriaDAO dao = new CategoriaDAO();
+    for(Categoria c: dao.findAll()){
+    System.out.println("Descrição: "+c.getDescricao());
+    }
+    }
 }
