@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.bean;
 
 /**
- *
- * @author rodri
+ * @author Francis
+ * @author Hermino
+ * @author Geovani
+ * @author Tállyto
  */
 public class Cliente {
 
@@ -18,7 +15,8 @@ public class Cliente {
     private String endereco;
     private String telefone;
     private String nascimento;
-
+    
+    /*Construtor*/
     public Cliente() {
     }
 
@@ -30,7 +28,8 @@ public class Cliente {
         this.telefone = telefone;
         this.nascimento = nascimento;
     }
-
+    
+    /*Get and set*/
     public int getId() {
         return id;
     }

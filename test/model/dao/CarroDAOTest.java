@@ -20,17 +20,15 @@ public class CarroDAOTest {
     public CarroDAOTest() {
     }
 
-  @Test
-    @Ignore
+     @Test
+//    @Ignore
     public void insereBanco() {
-        
-        Carro cliente = new Carro ();
-        
+        Carro carro = new Carro("Camaro", "Esporte", "Vermelha", "FORD", 2014, "Disponivel", "Luxo");
         CarroDAO dao = new CarroDAO();
-        
-        if(dao.save(cliente)){
+
+        if (dao.save(carro)) {
             System.out.println("Salvo com sucesso!");
-        }else{
+        } else {
             fail("Erro ao salvar!");
         }
     }

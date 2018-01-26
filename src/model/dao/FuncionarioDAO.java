@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.dao;
 
 import connection.ConnectionFactory;
@@ -15,8 +10,10 @@ import java.util.List;
 import model.bean.Funcionario;
 
 /**
- *
- * @author rodri
+ * @author Francis
+ * @author Hermino
+ * @author Geovani
+ * @author Tállyto
  */
 public class FuncionarioDAO {
 
@@ -26,7 +23,7 @@ public class FuncionarioDAO {
         con = ConnectionFactory.getConnection();
     }
 
-    //Salva no banco de dados
+    /*Salva no banco de dados*/
     public boolean save(Funcionario funcionario) {
         String sql = "INSERT INTO funcionario (nome,CPF,cargo) VALUES (?,?,?)";
         PreparedStatement stmt = null;
@@ -45,7 +42,7 @@ public class FuncionarioDAO {
         }
     }
 
-    //Lista todos os itens do banco de dados
+   /*Lista todos os itens do banco de dados*/
     public List<Funcionario> findAll() {
 
         String sql = "SELECT * FROM funcionario";
@@ -75,7 +72,7 @@ public class FuncionarioDAO {
         return funcionarios;
     }
 
-    //Atualiza no banco de dados
+    /*Atualiza no banco de dados*/
     public boolean update(Funcionario funcionario) {
         String sql = "UPDATE funcionario SET nome = ? , CPF = ? , cargo = ? WHERE ID = ?";
         PreparedStatement stmt = null;
@@ -96,7 +93,7 @@ public class FuncionarioDAO {
 
     }
 
-    //Deleta um iten do bando de dados
+    /*Deleta um iten do bando de dados*/
     public boolean delete(Funcionario funcionario) {
         String sql = "DELETE FROM funcionario WHERE id = ?";
         PreparedStatement stmt = null;

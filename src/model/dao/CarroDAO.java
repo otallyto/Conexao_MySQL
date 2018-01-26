@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.dao;
 
 import connection.ConnectionFactory;
@@ -15,8 +10,10 @@ import java.util.List;
 import model.bean.Carro;
 
 /**
- *
- * @author rodri
+ * @author Francis
+ * @author Hermino
+ * @author Geovani
+ * @author Tállyto
  */
 public class CarroDAO {
 
@@ -26,7 +23,7 @@ public class CarroDAO {
         con = ConnectionFactory.getConnection();
     }
 
-    //Salva no banco de dados
+    /*Salva no banco de dados*/
     public boolean save(Carro carro) {
         String sql = "INSERT INTO carro (nome,modelo,marca,cor,ano,classe,status) VALUES (?,?,?,?,?,?,?)";
         PreparedStatement stmt = null;
@@ -50,7 +47,7 @@ public class CarroDAO {
 
     }
 
-    //Lista todos os itens do banco de dados
+    /*Lista todos os itens do banco de dados*/
     public List<Carro> findAll() {
 
         String sql = "SELECT * FROM carro";
@@ -85,7 +82,7 @@ public class CarroDAO {
         return listaCarros;
     }
     
-     //Deleta um iten do bando de dados
+     /*Deleta um iten do bando de dados*/
       public boolean delete(Carro carro){
         String sql = "DELETE FROM carro WHERE id = ?";
         PreparedStatement stmt = null;
@@ -103,7 +100,7 @@ public class CarroDAO {
     }
       
       
-          //Atualiza no banco de dados
+     /*Atualiza no banco de dados*/
      public boolean update(Carro carro){
         String sql = "UPDATE carro SET nome = ? , modelo = ? , marca = ?, cor = ? , ano = ? , classe = ? , status = ? WHERE ID = ?";
         PreparedStatement stmt = null;

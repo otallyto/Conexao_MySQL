@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.bean;
 
 /**
- *
- * @author rodri
+ * @author Francis
+ * @author Hermino
+ * @author Geovani
+ * @author Tállyto
  */
 public class Funcionario {
 
@@ -15,7 +12,8 @@ public class Funcionario {
     private String nome;
     private String CPF;
     private String cargo;
-
+    
+    /*Construtor*/
     public Funcionario() {
     }
 
@@ -24,7 +22,8 @@ public class Funcionario {
         this.CPF = CPF;
         this.cargo = cargo;
     }
-
+    
+    /*Get and set*/
     public int getId() {
         return id;
     }

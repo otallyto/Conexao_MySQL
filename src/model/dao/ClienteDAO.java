@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.dao;
 
 import connection.ConnectionFactory;
@@ -15,8 +10,10 @@ import java.util.List;
 import model.bean.Cliente;
 
 /**
- *
- * @author rodri
+ * @author Francis
+ * @author Hermino
+ * @author Geovani
+ * @author Tállyto
  */
 public class ClienteDAO {
 
@@ -26,7 +23,7 @@ public class ClienteDAO {
         con = ConnectionFactory.getConnection();
     }
 
-    //Salva no banco de dados
+    /*Salva no banco de dados*/
     public boolean save(Cliente cliente) {
         String sql = "INSERT INTO cliente (nome,CPF,RG,endereco,telefone,nascimento) VALUES (?,?,?,?,?,?)";
         PreparedStatement stmt = null;
@@ -49,7 +46,7 @@ public class ClienteDAO {
 
     }
 
-    //Lista todos os itens do banco de dados
+    /*Lista todos os itens do banco de dados*/
     public List<Cliente> findAll() {
 
         String sql = "SELECT * FROM cliente";
@@ -83,7 +80,7 @@ public class ClienteDAO {
         return listaClientes;
     }
 
-    //Atualiza no banco de dados
+     /*Atualiza no banco de dados*/
     public boolean update(Cliente cliente) {
         String sql = "UPDATE cliente SET nome = ?, CPF = ?, RG = ?, endereco = ? , telefone = ? , nascimento = ? WHERE ID = ?";
         PreparedStatement stmt = null;
@@ -108,7 +105,7 @@ public class ClienteDAO {
 
     }
 
-    //Deleta um iten do bando de dados
+    /*Deleta um iten do bando de dados*/
     public boolean delete(Cliente cliente) {
         String sql = "DELETE FROM cliente WHERE id = ?";
         PreparedStatement stmt = null;
